@@ -12,90 +12,83 @@
 </head>
 
 <body>
-
-    <div class="header">
-        <h1>Math Fun with Emojis</h1>
-        <h3>Practice addition with Emojis</h3>
-    </div>
-
-
     <div class="container">
-        <div class="row">      
 
-            <div class="col-lg-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Results</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h3 id="wins">Wins: </h3>
-                        <h3 id="losses">Losses: </h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Random Number</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h1 id="randomNumber"></h1>
-                    </div>
-                </div>
-            </div>
-            
-          <div class="col-lg-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title" id="rules">Rules of the Game</h3>
-                    </div>
-                    <div class="panel-body" id="description" style="display: none;">
-                        <p>You will be given a random number at the start of the game.
-                            <br>
-                            <br> Can you spot the emojis? By clicking on an emoji, you will add a specific amount of points to your total score.
-                            <br>
-                            <br> You win the game by matching your total score to the random number, you lose the game if your total scores goes above it.
-                            <br>
-                            <br>The value of each crystal is hidden from you until you click it.
-                            <br>
-                            <br>Each time the game starts over, the values of the emojis will change.</p>
-                    </div>
-                </div>
-            </div>
-
-
-
+        <div class="header">
+            <h1>Math Fun with Emojis</h1>
+            <!-- <h3>Practice addition with Emojis</h3> -->
         </div>
+
+    <!-- row with table, holds results and random Number -->
+        <div class="row">      
+            <div class="col-lg-offset-1 col-lg-10">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Results</th>
+                    <th>Random Number</th>
+                    <th>Your Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="wins">Wins: </td>
+                    <td id="randomNumber"></td>
+                    <td id="result"></td>
+                  </tr>
+                  <tr>
+                    <td id="losses">Losses: </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div> <!--closes row -->
+
+        <!-- row with Emoji buttons -->
         <div class="row">
             <!-- Calculator Panel -->
-            <div class="col-lg-4">
+            <div class="col-lg-offset-2 col-lg-7" id="emojis">
+                        <div class="col-lg-3">
+                            <img id="emoji-1" src="assets/images/joy.png" style="width: 50px; height: 50px">
+                        </div>
+                        <div class="col-lg-3">
+                            <img id="emoji-2" src="assets/images/clown.png" style="width: 50px; height: 50px">
+                        </div>
+                        <div class="col-lg-3">
+                            <img id="emoji-3" src="assets/images/nerdemoji.png" style="width: 50px; height: 50px">
+                        </div>
+                        <div class="col-lg-3">
+                            <img id="emoji-4" src="assets/images/tounge.png" style="width: 50px; height: 50px">
+                        </div>
+            </div>
+         
+        </div>  <!--closes row -->
+
+        <!-- rules of the game panel toggled -->
+        <div class="row">
+             <div class="col-lg-offset-2 col-lg-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Emojis</h3>
+                        <h3 class="panel-title" id="rules">Instructions</h3>
                     </div>
-                    <div class="panel-body">
-                        <button id="emoji-1" class="btn btn-emoji" value=""><img src="assets/images/joy.png" style="width: 50px; height: 50px"></button>
-                        <button id="emoji-2" class="btn btn-emoji" value=""><img src="assets/images/clown.png" style="width: 50px; height: 50px"></button>
-                        <button id="emoji-3" class="btn btn-emoji" value=""><img src="assets/images/nerdemoji.jpg" style="width: 50px; height: 50px"></button>
-                        <button id="emoji-4" class="btn btn-emoji" value=""><img src="assets/images/tounge.png" style="width: 50px; height: 50px"></button>
-                    </div>
-                </div>
-            </div>
-            <!-- Result Panel -->
-            <div class="col-lg-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Your Score: </h3>
-                    </div>
-                    <div class="panel-body">
-                        <h1 id="result"></h1>
+                    <div class="panel-body" id="description" style="display: none;">
+                        <p>You will be given a random number at the start of each game.
+                            <br>
+                            <br>Can you spot the emojis? By clicking on an emoji, you will add a specific amount of points to your total score. The value of each emoji is hidden from you until you click it and it changes every time you start a new game.
+                            <br>
+                            <br> Win the game by matching your total score to the random number, you lose the game if your total score goes above it.
+                        </p>
                     </div>
                 </div>
-            </div>
-        </div>
+             </div>
+        </div>  <!--closes row -->
+
     </div>
-    <script type="text/javascript" src="assets/javascript/game2.js"></script>
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
 
 </html>
