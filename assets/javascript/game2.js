@@ -10,7 +10,10 @@ $(document).ready(function() {
 
     //create needed functions
     //-----------------------------------------------------------------------------------------------
-    
+    $("#rules").click(function(){
+        $("#description").toggle();
+    })
+
     function startGame() {
     //create and display random Number
     	randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
@@ -22,49 +25,50 @@ $(document).ready(function() {
 	    emoji3 = Math.floor(Math.random() * 12 + 1);
 	    emoji4 = Math.floor(Math.random() * 12 + 1);
 
+        result = 0;
+        $("#result").html(result);
     }	
 
 
 	//function that adds up emojis after each click to user's score
 
-    function updateGame() {
-
-    while (randomNumber < result) {
-    
-    if (randomNumber > result) {
-        losses++;
-        $("#losses").html(losses);
-        startGame();
-    } else if (randomNumber === result) {
+    function compare() {
+    if (randomNumber.toString() === result.toString()) {
         wins++;
-        $("#wins").html(wins);
+        $("#wins").html("Wins: " + wins);
         startGame();
-    }else {
+    } else if (randomNumber < result) {
+        losses++;
+        $("#losses").html("Losses: " + losses);
+        startGame();
+    } }
+
 
         $("#emoji-1").on("click", function() {
             $("#result").html(result = parseInt(emoji1) + parseInt(result));
+            compare();
         });
 
         $("#emoji-2").on("click", function() {
             $("#result").html(result = parseInt(emoji2) + parseInt(result));
-
+            compare();
         });
 
         $("#emoji-3").on("click", function() {
             $("#result").html(result = parseInt(emoji3) + parseInt(result));
+            compare();
         });
 
         $("#emoji-4").on("click", function() {
             $("#result").html(result = parseInt(emoji4) + parseInt(result));
+            compare();
         });
-    }}
+    
+
 
     //call on functions to play the game
     //---------------------------------------------------------------------------------------------
     startGame();
 
-    updateGame(randomNumber, result);
 
-    gameWon();
-
-});
+})

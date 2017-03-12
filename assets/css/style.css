@@ -1,0 +1,12 @@
+body {
+	background-image: url("../images/background.jpg");
+}
+
+button {
+	background-color: white;
+}
+
+.header {
+	font-family: "Chalk Line Outline";
+	color: white;
+}
