@@ -10,6 +10,7 @@ $(document).ready(function() {
 
     //create needed functions
     //-----------------------------------------------------------------------------------------------
+    //toggles game instructions
     $("#rules").click(function(){
         $("#description").toggle();
     })
@@ -36,10 +37,12 @@ $(document).ready(function() {
     if (randomNumber === result) {
         wins++;
         $("#wins").html("Wins: " + wins);
+        document.getElementById("winaudio").play();
         startGame();
     } else if (randomNumber < result) {
         losses++;
         $("#losses").html("Losses: " + losses);
+        document.getElementById("lossaudio").play();
         startGame();
     } }
 

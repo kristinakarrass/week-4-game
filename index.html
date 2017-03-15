@@ -19,6 +19,25 @@
             <!-- <h3>Practice addition with Emojis</h3> -->
         </div>
 
+        <!-- rules of the game panel toggled -->
+        <div class="row">
+             <div class="col-lg-offset-2 col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" id="rules">Click here to learn how to play the game!</h3>
+                    </div>
+                    <div class="panel-body" id="description" style="display: none;">
+                        <p>You will be given a random number at the start of each game.
+                            <br>
+                            <br>Can you spot the emojis? By clicking on an emoji, you will add a specific amount of points to your total score. The value of each emoji is hidden from you until you click it and it changes every time you start a new game.
+                            <br>
+                            <br> Win the game by matching your total score to the random number, you lose the game if your total score goes above it.
+                        </p>
+                    </div>
+                </div>
+             </div>
+        </div>  <!--closes row -->
+
     <!-- row with table, holds results and random Number -->
         <div class="row">      
             <div class="col-lg-offset-1 col-lg-10">
@@ -33,11 +52,13 @@
                 <tbody>
                   <tr>
                     <td id="wins">Wins: </td>
+                    <audio id="winaudio" src="assets/audio/win.mp3" type="audio/mp3" preload="auto"></audio>
                     <td id="randomNumber"></td>
                     <td id="result"></td>
                   </tr>
                   <tr>
                     <td id="losses">Losses: </td>
+                    <audio id="lossaudio"><source src="assets/audio/loss.mp3" type="audio/mp3"></audio>
                     <td></td>
                     <td></td>
                   </tr>
@@ -49,41 +70,26 @@
         <!-- row with Emoji buttons -->
         <div class="row">
             <!-- Calculator Panel -->
-            <div class="col-lg-offset-2 col-lg-7" id="emojis">
+            <div class="col-sm-12 col-md-12 col-lg-offset-2 col-lg-7" id="emojis">
+                        <audio id="emojisound">
+                            <source src="assets/audio/pop.mp3">
+                        </audio>
                         <div class="col-lg-3">
-                            <img id="emoji-1" src="assets/images/joy.png" style="width: 50px; height: 50px">
+                            <img  id="emoji-1" src="assets/images/joy.png" onclick="document.getElementById('emojisound').play()" style="width: 70px; height: 70px">
                         </div>
                         <div class="col-lg-3">
-                            <img id="emoji-2" src="assets/images/clown.png" style="width: 50px; height: 50px">
+                            <img id="emoji-2" src="assets/images/clown.png" onclick="document.getElementById('emojisound').play()" style="width: 70px; height: 70px">
                         </div>
                         <div class="col-lg-3">
-                            <img id="emoji-3" src="assets/images/nerdemoji.png" style="width: 50px; height: 50px">
+                            <img id="emoji-3" src="assets/images/nerdemoji.png" onclick="document.getElementById('emojisound').play()" style="width: 70px; height: 70px">
                         </div>
                         <div class="col-lg-3">
-                            <img id="emoji-4" src="assets/images/tounge.png" style="width: 50px; height: 50px">
+                            <img id="emoji-4" src="assets/images/tounge.png" onclick="document.getElementById('emojisound').play()" style="width: 70px; height: 70px">
                         </div>
             </div>
          
         </div>  <!--closes row -->
 
-        <!-- rules of the game panel toggled -->
-        <div class="row">
-             <div class="col-lg-offset-2 col-lg-8">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title" id="rules">Instructions</h3>
-                    </div>
-                    <div class="panel-body" id="description" style="display: none;">
-                        <p>You will be given a random number at the start of each game.
-                            <br>
-                            <br>Can you spot the emojis? By clicking on an emoji, you will add a specific amount of points to your total score. The value of each emoji is hidden from you until you click it and it changes every time you start a new game.
-                            <br>
-                            <br> Win the game by matching your total score to the random number, you lose the game if your total score goes above it.
-                        </p>
-                    </div>
-                </div>
-             </div>
-        </div>  <!--closes row -->
 
     </div>
 
